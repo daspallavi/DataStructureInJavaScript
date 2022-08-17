@@ -1,12 +1,24 @@
-function countDown(num) {
-    if (num == 0) {
-        console.log('All done');
-        return 0;
+// function countDown(num) {
+//     if (num == 0) {
+//         console.log('All done');
+//         return 0;
+//     }
+//     console.log(num);
+//     num--;
+//     countDown(num);
+// }
+
+// countDown(5)
+
+
+function factorial(num) {
+    if (num == 1 || num == 0) {
+        return 1;
     }
-    console.log(num);
-    num--;
-    countDown(num);
+    return num * factorial(num - 1)
 }
 
-countDown(5)
+console.log(factorial(19));
+
+
 
