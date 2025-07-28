@@ -8,6 +8,10 @@ console.log("------------Find the second largest in the given array-------------
 let input = [4, 9, 0, 2, 8, 7, 2, 1]
 
 function getSecondLargest(arr) {
+    if (arr.length < 2) {
+        return "Array should have atleast 2 elements";
+    }
+
 
     let firstLargest = -Infinity;
     let secondLargest = -Infinity;
@@ -18,7 +22,9 @@ function getSecondLargest(arr) {
             secondLargest = firstLargest;
             firstLargest = arr[i];
         }
-        else if (arr[i] > secondLargest) {
+        else if (arr[i] > secondLargest && arr[i] !== firstLargest)
+        // the second condition is for duplicate entries -> let's say arr =[10, 20,20], same entries will not be counted
+        {
             secondLargest = arr[i]
         }
     }
