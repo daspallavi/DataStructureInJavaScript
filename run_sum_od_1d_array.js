@@ -8,3 +8,4 @@ var runningSum = function (nums) {
 
 
 console.log(runningSum([1, 2, 1]));
+
