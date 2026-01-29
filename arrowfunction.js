@@ -14,3 +14,5 @@ let obj = {
 }
 
 obj.fun();
+
+console.log("Hello World");
