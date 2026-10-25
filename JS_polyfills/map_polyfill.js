@@ -1,0 +1,19 @@
+//Polyfill for map
+
+//Array.map(num, i,arr) =>{});
+
+Array.prototype.myMap = function(cb){
+    let temp = [];
+    // this.length refer here the arr on which the operation has to be done.
+    //const multiplyThree = nums.myMap((num, i ,arr)=>{ return num*3;})
+    for(let i =0; i < this.length; i++){
+        temp.push(cb(this[i], i, this));
+    }
+    return temp;
+};
+
+const nums = [1,2,3,4];
+
+const multiplyThree = nums.myMap((num, i ,arr)=>{ return num*3;})
+console.log(multiplyThree);
+
