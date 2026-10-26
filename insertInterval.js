@@ -47,6 +47,10 @@ function inserIntervals(intervals, newInterval){
 /*
 In this phase, we merge all the intervals that overlap with newInterval together into a single interval by updating newInterval to be the minimum start and maximum end of all the overlapping intervals. This includes intervals that merely "touch" newInterval (e.g. [1,4] and [4,7] should merge into [1,7]). We iterate through the intervals list until the current interval starts after newInterval ends (i.e. intervals[i][0] > newInterval[1]).
 When that condition is met, we add newInterval to merged and move onto phase 3.
+
+[1,2],[3,5],[6,7],[8,10]], [5,6]
+=> [3,5] [6,7] --> [5,6]
+
 */
 while(i<n && intervals[i][0] <= newInterval[1]){
 
