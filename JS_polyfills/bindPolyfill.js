@@ -28,3 +28,28 @@ obj.apply(args[0],[...params,...args2])
 const fn = showVillian.myBind(villain);
 fn();
 
+
+const car = {
+    color:"red",
+    model: "Ferrari"
+}
+
+
+function purchaseCar(when){
+    console.log(`${when} I bought a ${this.color} ${this.model}`);
+}
+
+Function.prototype.customBind = function(context={}, ...args){
+if(typeof this !=="function"){
+  throw new Error(this + "It is not callable");
+}
+
+context.fn = this;
+return function(...newArgs){
+  return context.fn(...args, ...newArgs);
+}
+};
+
+const newFunc = purchaseCar.customBind(car);
+newFunc("Today");
+
